@@ -1,0 +1,167 @@
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { useState } from "react";
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({ type: '', message: '' });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ type: 'loading', message: 'Sending message...' });
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({ type: 'success', message: 'Message sent successfully!' });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus({ type: 'error', message: data.message || 'Something went wrong' });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+          Get In Touch
+        </h2>
+        
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+                Let's Connect
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-center space-x-4">
+                <FaGithub className="text-2xl text-gray-800 dark:text-white" />
+                <a 
+                  href="hhttps://github.com/Ashu27-arc" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                >
+                  github.com/Ashu27-arc
+                </a>
+              </div>
+              <div className="flex items-center space-x-4">
+                <FaLinkedin className="text-2xl text-blue-700" />
+                <a 
+                  href="https://www.linkedin.com/in/ashutosh-rathore-644213221/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                >
+                  linkedin.com/in/ashutosh-rathore-644213221/
+                </a>
+              </div>
+              <div className="flex items-center space-x-4">
+                <FaEnvelope className="text-2xl text-red-500" />
+                <a 
+                  href="mailto:rathoreashutosh37@gmail.com"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                >
+                  rathoreashutosh37@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
+                required
+              ></textarea>
+            </div>
+            {status.message && (
+              <div className={`text-center p-2 rounded ${
+                status.type === 'success' ? 'bg-green-100 text-green-700' :
+                status.type === 'error' ? 'bg-red-100 text-red-700' :
+                'bg-blue-100 text-blue-700'
+              }`}>
+                {status.message}
+              </div>
+            )}
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200"
+              disabled={status.type === 'loading'}
+            >
+              {status.type === 'loading' ? 'Sending...' : 'Send Message'}
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
