@@ -10,7 +10,7 @@ const projects = [
     description: "A modern, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. Features smooth animations, dark mode, and a clean design.",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com/Ashu27-arc/my-portfolio.git",
-    liveLink: "#",
+    liveLink: "https://my-portfolio-bay-one-77.vercel.app/",
     image: portfolioImage
   },
   {
