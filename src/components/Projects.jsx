@@ -9,7 +9,7 @@ const projects = [
     title: "Portfolio Website",
     description: "A modern, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. Features smooth animations, dark mode, and a clean design.",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    githubLink: "https://github.com/Ashu27-arc/portfolio",
+    githubLink: "https://github.com/Ashu27-arc/my-portfolio.git",
     liveLink: "#",
     image: portfolioImage
   },
