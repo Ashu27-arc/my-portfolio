@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase, FaWordpress, FaGitAlt, FaGithub, FaPhp } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase, FaWordpress, FaGitAlt, FaGithub, FaPhp, FaAndroid, FaPython } from 'react-icons/fa';
 
 const skills = [
   { name: 'HTML5', icon: <FaHtml5 />, level: 90, color: '#E34F26' },
@@ -11,6 +11,8 @@ const skills = [
   { name: 'MongoDB', icon: <FaDatabase />, level: 65, color: '#47A248' },
   { name: 'WordPress', icon: <FaWordpress />, level: 80, color: '#21759B' },
   { name: 'PHP', icon: <FaPhp />, level: 50, color: '#474A8A' },
+  { name: 'Flutter', icon: <FaAndroid />, level: 70, color: '#A4C639' },
+  { name: 'Python', icon: <FaPython />, level: 40, color: '#0000FF' },
   { name: 'Github', icon: <FaGithub />, level: 90, color: '#24292e' },
   { name: 'Git', icon: <FaGitAlt />, level: 75, color: '#F05032' }, 
 ];
