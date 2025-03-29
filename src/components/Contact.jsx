@@ -12,7 +12,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ type: 'loading', message: 'Sending message...' });
-    
+
     try {
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
@@ -49,7 +49,7 @@ const Contact = () => {
         <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Get In Touch
         </h2>
-        
+
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
@@ -66,7 +66,7 @@ const Contact = () => {
               <div className="flex items-center space-x-4">
                 <FaGithub className="text-2xl text-gray-800 dark:text-white" />
                 <a 
-                  href="hhttps://github.com/Ashu27-arc" 
+                  href="https://github.com/Ashu27-arc" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
@@ -141,21 +141,8 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-            {status.message && (
-              <div className={`text-center p-2 rounded ${
-                status.type === 'success' ? 'bg-green-100 text-green-700' :
-                status.type === 'error' ? 'bg-red-100 text-red-700' :
-                'bg-blue-100 text-blue-700'
-              }`}>
-                {status.message}
-              </div>
-            )}
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200"
-              disabled={status.type === 'loading'}
-            >
-              {status.type === 'loading' ? 'Sending...' : 'Send Message'}
+            <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200">
+              Send Message
             </button>
           </form>
         </div>
