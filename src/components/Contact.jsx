@@ -25,7 +25,7 @@ const Contact = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setStatus({ type: 'success', message: 'Message sent successfully!' });
+        setStatus({ type: 'success', message: 'Thank you for your message! We will get back to you soon.' });
         setFormData({ name: '', email: '', message: '' });
       } else {
         setStatus({ type: 'error', message: data.message || 'Something went wrong' });
@@ -144,6 +144,15 @@ const Contact = () => {
             <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200">
               Send Message
             </button>
+            {status.message && (
+              <div className={`mt-4 p-3 rounded-md text-center ${
+                status.type === 'success' ? 'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-100' :
+                status.type === 'error' ? 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-100' :
+                'bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-100'
+              }`}>
+                {status.message}
+              </div>
+            )}
           </form>
         </div>
       </div>
