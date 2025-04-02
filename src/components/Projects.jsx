@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "A modern, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. Features smooth animations, dark mode, and a clean design.",
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "mongoDB", "node.js"],
     githubLink: "https://github.com/Ashu27-arc/my-portfolio.git",
     liveLink: "https://my-portfolio-bay-one-77.vercel.app/",
     image: portfolioImage
@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Woocommerce Website",
     description: "A full-featured e-commerce platform built with WordPress and WooCommerce, featuring user authentication, product management, a shopping cart, and secure payment integration.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "WordPress"],
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "WordPress",],
     githubLink: "https://github.com/Ashu27-arc/swpc.git",
     liveLink: "https://www.shewings.com/",
     image: ecommerceImage
