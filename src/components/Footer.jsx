@@ -63,7 +63,7 @@ const Footer = () => {
                 <FaGithub />
               </a>
               <a
-                href="https://www.instagram.com/ashutosh_rathor_27/"
+                href="https://www.instagram.com/aaru.sh8207/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-3xl hover:text-pink-400 transition-colors duration-300"
