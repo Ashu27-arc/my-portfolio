@@ -17,7 +17,7 @@ const projects = [
     title: "Woocommerce Website",
     description: "A full-featured e-commerce platform built with WordPress and WooCommerce, featuring user authentication, product management, a shopping cart, and secure payment integration.",
     technologies: ["HTML", "CSS", "JavaScript", "PHP", "WordPress",],
-    githubLink: "https://github.com/Ashu27-arc/swpc.git",
+    githubLink: "https://github.com/Ashu27-arc/swpcReact.git",
     liveLink: "https://www.shewings.com/",
     image: ecommerceImage
   },
