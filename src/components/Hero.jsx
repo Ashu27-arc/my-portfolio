@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import profileImage from "../assets/my2.jpg";
-import resumePDF from "../resume/UpdatedCV.pdf";
+import resumePDF from "../resume/Ashutosh-Rathor-Resume.pdf";
 
 const Hero = () => {
   return (
@@ -53,7 +53,7 @@ const Hero = () => {
         </motion.a>
         <motion.a
           href={resumePDF}
-          download="UpdatedCV.pdf"
+          download="Ashutosh-Rathor-Resume.pdf"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}

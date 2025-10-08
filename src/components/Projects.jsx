@@ -3,6 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import portfolioImage from "../assets/projects.png";
 import ecommerceImage from "../assets/projects-1.png";
 import taskManagerImage from "../assets/projects-2.png";
+import itwebsiteImage from "../assets/projects-3.png";
 
 const projects = [
   {
@@ -28,6 +29,15 @@ const projects = [
     githubLink: "https://github.com/Ashu27-arc/swf.git",
     liveLink: "https://shewingsfoundation.com/",
     image: taskManagerImage
+  },
+  {
+    title: "IT Solutions Website",
+    description: "A website for IT solutions, offering a user-friendly interface for customers to browse and purchase IT services. Includes service listings, contact forms, and a blog section.",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "WordPress", "Elementor", "MySQL"],
+    githubLink: "https://github.com/Ashu27-arc/itsolutions.git",
+    liveLink: "https://binarama.com/",
+    image: itwebsiteImage
+
   }
 ];
 
