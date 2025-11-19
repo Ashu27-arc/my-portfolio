@@ -15,7 +15,7 @@ const Contact = () => {
     setStatus({ type: 'loading', message: 'Sending message...' });
 
     try {
-      const response = await axios.post('http://localhost:5000/api/contact', formData);
+      const response = await axios.post('https://my-portfolio-backend-co7e.onrender.com/api/contact', formData);
 
       if (response.data.success) {
         setStatus({ type: 'success', message: 'Thank you for your message! I will get back to you soon.' });
