@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,25 +15,17 @@ const Contact = () => {
     setStatus({ type: 'loading', message: 'Sending message...' });
 
     try {
-      const response = await fetch('https://my-portfolio-bay-one-77.vercel.app/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post('http://localhost:5000/api/contact', formData);
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setStatus({ type: 'success', message: 'Thank you for your message! We will get back to you soon.' });
+      if (response.data.success) {
+        setStatus({ type: 'success', message: 'Thank you for your message! I will get back to you soon.' });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus({ type: 'error', message: data.message || 'Something went wrong' });
+        setStatus({ type: 'error', message: response.data.message || 'Something went wrong' });
       }
     } catch (error) {
       console.error('Error:', error);
-      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+      setStatus({ type: 'error', message: error.response?.data?.message || 'Failed to send message. Please try again.' });
     }
   };
 
@@ -65,9 +58,9 @@ const Contact = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <FaGithub className="text-2xl text-gray-800 dark:text-white" />
-                <a 
-                  href="https://github.com/Ashu27-arc" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/Ashu27-arc"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 >
@@ -76,9 +69,9 @@ const Contact = () => {
               </div>
               <div className="flex items-center space-x-4">
                 <FaLinkedin className="text-2xl text-blue-700" />
-                <a 
-                  href="https://www.linkedin.com/in/ashutosh-rathore-644213221/" 
-                  target="_blank" 
+                <a
+                  href="https://www.linkedin.com/in/ashutosh-rathore-644213221/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 >
@@ -87,7 +80,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center space-x-4">
                 <FaEnvelope className="text-2xl text-red-500" />
-                <a 
+                <a
                   href="mailto:rathoreashutosh37@gmail.com"
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                 >
@@ -141,15 +134,18 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200">
-              Send Message
+            <button
+              type="submit"
+              disabled={status.type === 'loading'}
+              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200 disabled:bg-blue-400 disabled:cursor-not-allowed"
+            >
+              {status.type === 'loading' ? 'Sending...' : 'Send Message'}
             </button>
             {status.message && (
-              <div className={`mt-4 p-3 rounded-md text-center ${
-                status.type === 'success' ? 'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-100' :
-                status.type === 'error' ? 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-100' :
-                'bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-100'
-              }`}>
+              <div className={`mt-4 p-3 rounded-md text-center ${status.type === 'success' ? 'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-100' :
+                  status.type === 'error' ? 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-100' :
+                    'bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-100'
+                }`}>
                 {status.message}
               </div>
             )}
