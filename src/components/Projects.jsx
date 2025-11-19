@@ -4,6 +4,7 @@ import portfolioImage from "../assets/projects.png";
 import ecommerceImage from "../assets/projects-1.png";
 import taskManagerImage from "../assets/projects-2.png";
 import itwebsiteImage from "../assets/projects-3.png";
+import ecommerceAppImage from "../assets/projects-4.jpg";
 
 const projects = [
   {
@@ -38,6 +39,14 @@ const projects = [
     liveLink: "https://binarama.com/",
     image: itwebsiteImage
 
+  },
+  {
+    title: "E-commerce App",
+    description: "",
+    technologies: ["React Native", "Typescriprt", "JavaScript", "Native CSS", "Expo", "MongoDB", "Node.js", "Express.js"],
+    githubLink: "https://github.com/Ashu27-arc/e-commerce-app-frontend.git",
+    liveLink: "#",
+    image: ecommerceAppImage
   }
 ];
 
