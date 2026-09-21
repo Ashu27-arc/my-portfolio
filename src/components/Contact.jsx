@@ -15,7 +15,7 @@ const Contact = () => {
     setStatus({ type: 'loading', message: 'Sending message...' });
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://my-portfolio-backend-co7e.onrender.com';
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
       const response = await axios.post(`${apiUrl}/api/contact`, formData);
 
       if (response.data.success) {

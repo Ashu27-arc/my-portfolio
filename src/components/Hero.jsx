@@ -4,7 +4,7 @@ import resumePDF from "../resume/Ashutosh-Rathor-Resume.pdf";
 
 const Hero = () => {
   return (
-    <section 
+    <section
       className="h-screen flex flex-col items-center justify-center text-center relative"
       style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80')",
@@ -14,7 +14,7 @@ const Hero = () => {
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50 dark:bg-black/70"></div>
-      
+
       {/* Content */}
       <div className="flex flex-col md:flex-row items-center justify-center flex-1 w-full relative z-10">
         <div className="md:w-1/2 px-4">
@@ -53,7 +53,7 @@ const Hero = () => {
         </motion.a>
         <motion.a
           href={resumePDF}
-          download="Ashutosh-Rathor-Resume.pdf"
+          download="Ashutosh_Rathor_FlowCV_Resume_2026-09-14.pdf"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}

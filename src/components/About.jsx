@@ -75,13 +75,11 @@ const About = () => {
               <h3 className="text-2xl font-semibold mb-4 text-white">Experience</h3>
               <div className="space-y-4">
                 <div className="bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg shadow-md">
-                  <h4 className="font-semibold text-white">Web Developer Executive</h4>
+                  <h4 className="font-semibold text-white">Full Stack Developer</h4>
                   <h3 className="font-semibold text-white">Binarama Private Limited</h3>
-                  <p className="text-gray-200">2025 - Present</p>
+                  <p className="text-gray-200">2025 - 2026</p>
                   <p className="text-gray-200 mt-2">
-                    Led development of enterprise IT solutions using WordPress, creating custom themes
-                    and plugins. Optimized website performance, improved SEO rankings, and implemented
-                    security best practices. Managed multiple client projects simultaneously.
+                    Spearheaded the development of scalable full-stack web and mobile applications using Next.js, React Native, and the MERN stack. Designed responsive user interfaces, built robust RESTful APIs, and optimized database performance, successfully delivering projects like Radical Education and Neet Bhaiya.
                   </p>
                 </div>
                 <div className="bg-gray-800/80 backdrop-blur-sm p-4 rounded-lg shadow-md">

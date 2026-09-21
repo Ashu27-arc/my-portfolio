@@ -7,14 +7,15 @@ const skills = [
   { name: 'CSS3', icon: <FaCss3Alt />, level: 85, color: '#264DE4' },
   { name: 'JavaScript', icon: <FaJs />, level: 80, color: '#F7DF1E' },
   { name: 'React', icon: <FaReact />, level: 75, color: '#61DAFB' },
+  { name: 'TailwindCSS', icon: <i className="fa-brands fa-tailwind-css"></i>, level: 65, color: '#38BDF8' },
   { name: 'Node.js', icon: <FaNodeJs />, level: 70, color: '#339933' },
   { name: 'MongoDB', icon: <FaDatabase />, level: 65, color: '#47A248' },
   { name: 'WordPress', icon: <FaWordpress />, level: 80, color: '#21759B' },
   { name: 'PHP', icon: <FaPhp />, level: 50, color: '#474A8A' },
-  { name: 'Flutter', icon: <FaAndroid />, level: 70, color: '#A4C639' },
-  { name: 'Python', icon: <FaPython />, level: 40, color: '#0000FF' },
+  { name: 'React Native', icon: <FaAndroid />, level: 70, color: '#A4C639' },
+  { name: 'Next.js', icon: <FaPython />, level: 40, color: '#0000FF' },
   { name: 'Github', icon: <FaGithub />, level: 90, color: '#24292e' },
-  { name: 'Git', icon: <FaGitAlt />, level: 75, color: '#F05032' }, 
+  { name: 'Git', icon: <FaGitAlt />, level: 75, color: '#F05032' },
 ];
 
 const Skills = () => {
@@ -78,7 +79,7 @@ const Skills = () => {
           {/* Additional Skills */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
-              Additional Skills
+              Professional Skills
             </h3>
             <div className="grid grid-cols-2 gap-4">
               <motion.div
@@ -88,10 +89,10 @@ const Skills = () => {
                 className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
               >
                 <h4 className="font-medium text-gray-900 dark:text-white mb-2 transition-colors duration-300">
-                  Problem Solving
+                  Problem Solving & Debugging
                 </h4>
                 <p className="text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300">
-                  Strong analytical and problem-solving abilities
+                  Expertise in analyzing complex technical challenges and implementing optimized, scalable solutions.
                 </p>
               </motion.div>
               <motion.div
@@ -101,10 +102,10 @@ const Skills = () => {
                 className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
               >
                 <h4 className="font-medium text-gray-900 dark:text-white mb-2 transition-colors duration-300">
-                  Team Collaboration
+                  Agile & Team Collaboration
                 </h4>
                 <p className="text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300">
-                  Excellent communication and teamwork skills
+                  Strong communication skills with experience working in Agile/Scrum teams to deliver cross-functional projects.
                 </p>
               </motion.div>
               <motion.div
@@ -117,7 +118,7 @@ const Skills = () => {
                   Project Management
                 </h4>
                 <p className="text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300">
-                  Efficient project planning and execution
+                  Efficient at planning, prioritizing tasks, and driving projects from conception to successful deployment.
                 </p>
               </motion.div>
               <motion.div
@@ -127,10 +128,36 @@ const Skills = () => {
                 className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
               >
                 <h4 className="font-medium text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+                  UI/UX Sensibility
+                </h4>
+                <p className="text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300">
+                  Keen eye for design details, ensuring pixel-perfect implementation and intuitive user experiences.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+              >
+                <h4 className="font-medium text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+                  Performance Optimization
+                </h4>
+                <p className="text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300">
+                  Dedicated to writing clean, maintainable code with a focus on web performance and SEO best practices.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+              >
+                <h4 className="font-medium text-gray-900 dark:text-white mb-2 transition-colors duration-300">
                   Continuous Learning
                 </h4>
                 <p className="text-sm text-gray-700 dark:text-gray-300 transition-colors duration-300">
-                  Passionate about learning new technologies
+                  Highly adaptable and always eager to integrate emerging technologies and modern development practices.
                 </p>
               </motion.div>
             </div>

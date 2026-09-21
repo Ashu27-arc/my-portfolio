@@ -5,6 +5,9 @@ import ecommerceImage from "../assets/projects-1.png";
 import taskManagerImage from "../assets/projects-2.png";
 import itwebsiteImage from "../assets/projects-3.png";
 import ecommerceAppImage from "../assets/projects-4.jpg";
+import radicalcustomImage from "../assets/projects-5.jpg";
+import neetbhaiyaImage from "../assets/projects-6.jpg";
+import neetbhaiyaAppImage from "../assets/projects-7.jpg";
 
 const projects = [
   {
@@ -42,12 +45,38 @@ const projects = [
   },
   {
     title: "E-commerce App",
-    description: "",
-    technologies: ["React Native", "Typescriprt", "JavaScript", "Native CSS", "Expo", "MongoDB", "Node.js", "Express.js"],
+    description: "A dynamic E-commerce app for customers to browse and purchase products. Includes product listings, shopping cart, and secure payment integration.",
+    technologies: ["React Native", "Typescriprt", "Redux-toolkit", "Native CSS", "Expo", "MongoDB", "Node.js", "Express.js"],
     githubLink: "https://github.com/Ashu27-arc/e-commerce-app-frontend.git",
     liveLink: "#",
     image: ecommerceAppImage
-  }
+  },
+  {
+    title: "Radical Education Website",
+    description: "A dynamic website for Radical Education, offering a user-friendly interface for customers to browse and purchase custom products. Includes product listings, custom product builder, contact forms, and a blog section.",
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "MongoDB", "Node.js", "Express.js"],
+    githubLink: "https://github.com/Ashu27-arc/radical-website.git",
+    liveLink: "https://www.radicaleducation.in/",
+    image: radicalcustomImage
+  },
+  {
+    title: "Neet Bhaiya Website",
+    description: "A dynamic website for Neet Bhaiya, offering a user-friendly interface for NEET aspirants. Includes AIIMS cut-off, State-wise cut-off, and info to help students get admission in colleges.",
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "MongoDB", "Node.js", "Express.js"],
+    githubLink: "#",
+    liveLink: "https://neetbhaiya.in/",
+    image: neetbhaiyaImage
+  },
+  {
+    title: "Neet-Bhaiya App",
+    description: "A Education Councelling app for NEET aspirants, offering a user-friendly interface for NEET aspirants. Includes college details, Book Counsellors, and resources to get admission in colleges.",
+    technologies: ["React Native", "Expo", "TypeScript", "Native CSS", "MongoDB", "Node.js", "Express.js"],
+    githubLink: "https://github.com/Ashu27-arc/neet-bhaiya.git",
+    liveLink: "https://play.google.com/store/apps/details?id=com.kaveka.NeetBhaiya&hl=en_IN",
+    image: neetbhaiyaAppImage
+  },
+
+
 ];
 
 const Projects = () => {
