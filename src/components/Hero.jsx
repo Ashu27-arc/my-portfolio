@@ -1,8 +1,27 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import profileImage from "../assets/my2.jpg";
 import resumePDF from "../resume/Ashutosh-Rathor-Resume.pdf";
 
+const titles = [
+  "Full Stack Developer",
+  "React.js Developer",
+  "Next.js Developer",
+  "WordPress Developer",
+  "React Native Developer"
+];
+
 const Hero = () => {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+    }, 2000); // Changes every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       className="h-screen flex flex-col items-center justify-center text-center relative"
@@ -17,17 +36,28 @@ const Hero = () => {
 
       {/* Content */}
       <div className="flex flex-col md:flex-row items-center justify-center flex-1 w-full relative z-10">
-        <div className="md:w-1/2 px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-5xl font-bold text-white"
-          >
+        <div className="md:w-1/2 px-4 flex flex-col items-center md:items-start text-center md:text-left">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
             Hi, I'm <span className="text-blue-400">Ashutosh</span>
-          </motion.h1>
-          <p className="mt-4 text-lg text-gray-200">
-            Web Developer | React | WordPress | PHP
+          </h1>
+
+          <div className="h-16 sm:h-12 flex items-center justify-center md:justify-start overflow-hidden w-full mb-4">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={currentTitleIndex}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.5 }}
+                className="text-2xl md:text-3xl font-semibold text-blue-300 block"
+              >
+                {titles[currentTitleIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
+
+          <p className="text-lg text-gray-300 max-w-lg mx-auto md:mx-0">
+            Passionate about building scalable, beautiful, and dynamic web and mobile applications.
           </p>
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0">
