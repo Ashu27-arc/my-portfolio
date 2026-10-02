@@ -15,8 +15,7 @@ const Contact = () => {
     setStatus({ type: 'loading', message: 'Sending message...' });
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-      const response = await axios.post(`${apiUrl}/api/contact`, formData);
+      const response = await axios.post("/api/contact", formData);
 
       if (response.data.success) {
         setStatus({ type: 'success', message: 'Thank you for your message! I will get back to you soon.' });
@@ -25,8 +24,8 @@ const Contact = () => {
         setStatus({ type: 'error', message: response.data.message || 'Something went wrong' });
       }
     } catch (error) {
-      console.error('Error:', error);
-      setStatus({ type: 'error', message: error.response?.data?.message || 'Failed to send message. Please try again.' });
+      const message = error.response?.data?.message || 'Failed to send message. Please try again.';
+      setStatus({ type: 'error', message });
     }
   };
 
