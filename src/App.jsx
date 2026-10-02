@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
+import Chatbot from "./components/Chatbot";
 import { Analytics } from '@vercel/analytics/react';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Skills />
       <Contact />
       <Footer />
+      <Chatbot />
     </div>
   );
 }
